@@ -1,0 +1,23 @@
+{
+    "name": "chaincraft-backend",
+    "version": "1.0.0",
+    "description": "ChainCraft backend - AI game design + WebSocket multiplayer",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "nodemon src/index.js",
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "ethers": "^6.11.1",
+        "express": "^4.19.2",
+        "jsonwebtoken": "^9.0.2",
+        "openai": "^4.47.1",
+        "socket.io": "^4.7.5",
+        "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.3"
+    }
+}

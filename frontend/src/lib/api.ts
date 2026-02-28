@@ -1,4 +1,4 @@
-const BASE = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000";
+const BASE = ""; // Use relative path for Next.js API routes
 
 async function req<T>(
     path: string,

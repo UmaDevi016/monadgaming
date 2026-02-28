@@ -142,6 +142,21 @@ Open http://localhost:3000 🚀
 
 ---
 
+## 🚀 Deployment (Vercel)
+
+The entire application (Frontend + Backend API + AI Generation + Monad Minting) is fully optimized for **Vercel** serverless deployment.
+
+1. Push your code to GitHub.
+2. Import the repository into [Vercel](https://vercel.com).
+3. Set the **Root Directory** setting to `frontend` in your Vercel Project settings.
+4. Set the following Environment Variables in Vercel:
+   - `OPENAI_API_KEY`: Your OpenAI key.
+   - `DEPLOYER_PRIVATE_KEY`: Private key for minting on Monad.
+   - `JWT_SECRET`: Random string for auth.
+5. Deploy! Vercel handles the Next.js frontend and all API endpoints automatically.
+
+---
+
 ## 🔧 Development
 
 ### Run Tests
@@ -181,27 +196,6 @@ The app works without blockchain connectivity:
 - Game generation and preview still works
 - Minting generates a demo transaction (no real chain needed)
 - Add `DEPLOYER_PRIVATE_KEY` to enable real on-chain minting
-
----
-
-## 🚀 Deployment
-
-### Frontend (Vercel)
-1. Push your code to GitHub.
-2. Import the repository into [Vercel](https://vercel.com).
-3. Vercel should automatically detect the `vercel.json` in the root.
-4. Set the following Environment Variables in Vercel:
-   - `NEXT_PUBLIC_BACKEND_URL`: Your live backend URL (e.g., `https://your-backend.railway.app`).
-5. Deploy!
-
-### Backend
-The backend uses WebSockets (Socket.io) and requires a persistent environment.
-- **Recommended**: [Railway](https://railway.app), [Render](https://render.com), or a VPS.
-- **Environment Variables**:
-  - `OPENAI_API_KEY`: Your OpenAI key.
-  - `DEPLOYER_PRIVATE_KEY`: Private key for minting on Monad.
-  - `JWT_SECRET`: Random string for auth.
-  - `FRONTEND_URL`: Your Vercel deployment URL (for CORS).
 
 ---
 

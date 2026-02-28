@@ -103,7 +103,7 @@ export function ChatBuilder() {
         } catch (err: any) {
             setMessages((prev) => [...prev, {
                 id: `e-${Date.now()}`, role: "assistant",
-                content: `⚠️ ${err.message ?? "Connection error"}. Make sure the backend server is reachable.`,
+                content: `⚠️ ${err.message ?? "Connection error"}. Make sure the server is reachable.`,
                 timestamp: Date.now(),
             }]);
         } finally {
