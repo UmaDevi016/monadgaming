@@ -36,7 +36,7 @@ const PHASE_LABELS: Record<Phase, string> = {
 };
 
 export function ChatBuilder() {
-    const { address, isConnected, connectWallet } = useWeb3();
+    const { address, isConnected, connect } = useWeb3();
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -103,7 +103,7 @@ export function ChatBuilder() {
         } catch (err: any) {
             setMessages((prev) => [...prev, {
                 id: `e-${Date.now()}`, role: "assistant",
-                content: `⚠️ ${err.message ?? "Connection error"}. Make sure the backend server is running on port 4000.`,
+                content: `⚠️ ${err.message ?? "Connection error"}. Make sure the backend server is reachable.`,
                 timestamp: Date.now(),
             }]);
         } finally {
@@ -117,7 +117,7 @@ export function ChatBuilder() {
     };
 
     const handleMint = async () => {
-        if (!isConnected) { connectWallet(); return; }
+        if (!isConnected) { connect(); return; }
         if (!sessionId || !address) return;
         setIsMinting(true);
         try {

@@ -9,7 +9,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ activeTab, onTabChange }: NavbarProps) {
-    const { address, balance, isConnecting, connectWallet, switchToMonad } = useWeb3();
+    const { address, balance, isConnecting, connect, switchToMonad } = useWeb3();
 
     const shortAddr = address
         ? `${address.slice(0, 6)}…${address.slice(-4)}`
@@ -70,7 +70,7 @@ export function Navbar({ activeTab, onTabChange }: NavbarProps) {
                 ) : (
                     <button
                         className={styles.walletBtn}
-                        onClick={connectWallet}
+                        onClick={connect}
                         disabled={isConnecting}
                     >
                         {isConnecting ? (

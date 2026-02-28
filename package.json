@@ -9,6 +9,7 @@
     "contracts"
   ],
   "scripts": {
+    "build": "npm run build --workspace=frontend",
     "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
     "setup": "npm install && npm run setup --workspace=contracts",
     "deploy:contracts": "npm run deploy --workspace=contracts"
