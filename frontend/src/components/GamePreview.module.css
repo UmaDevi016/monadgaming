@@ -1,0 +1,82 @@
+.wrapper {
+    position: relative;
+    background: #000;
+}
+
+.fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    border-radius: 0 !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.iframeWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.fullscreen .iframeWrapper {
+    flex: 1;
+    aspect-ratio: unset;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 16, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.playBtn {
+    font-size: 1.1rem;
+    padding: 14px 36px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid var(--border);
+}
+
+.controlBtn {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-inter);
+}
+
+.controlBtn:hover {
+    border-color: var(--monad-purple);
+    color: var(--text-primary);
+    background: rgba(124, 58, 237, 0.08);
+}
+
+.scoreDisplay {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--monad-teal-light);
+    font-weight: 600;
+}

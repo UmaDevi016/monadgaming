@@ -1,0 +1,19 @@
+{
+  "name": "chaincraft-monad",
+  "version": "1.0.0",
+  "description": "AI-powered multiplayer game builder on Monad blockchain",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "contracts"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "setup": "npm install && npm run setup --workspace=contracts",
+    "deploy:contracts": "npm run deploy --workspace=contracts"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

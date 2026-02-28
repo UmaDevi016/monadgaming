@@ -1,0 +1,215 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    background: rgba(5, 5, 16, 0.7);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+}
+
+/* subtle gradient line at bottom */
+.nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(124, 58, 237, 0.5) 40%, rgba(6, 182, 212, 0.5) 60%, transparent 100%);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, #7c3aed 0%, #0891b2 100%);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+    flex-shrink: 0;
+}
+
+.brandName {
+    font-family: var(--font-orbitron), monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+}
+
+.monadBadge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #a78bfa;
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 6px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 20px;
+    border-radius: 9px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-inter);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.tab:hover {
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.tabActive {
+    background: rgba(124, 58, 237, 0.18) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.3);
+}
+
+.tabIcon {
+    font-size: 0.95rem;
+}
+
+/* Wallet area */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    margin-left: 24px;
+}
+
+.networkPill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #34d399;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.networkPill:hover {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.balance {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+.walletBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 20px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    font-family: var(--font-inter);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.walletBtn:hover {
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    transform: translateY(-1px);
+    border-color: rgba(167, 139, 250, 0.6);
+}
+
+.walletConnected {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    color: #34d399 !important;
+    box-shadow: none !important;
+}
+
+.walletConnected:hover {
+    background: rgba(16, 185, 129, 0.18) !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.addrText {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+
+    .brandName,
+    .monadBadge {
+        display: none;
+    }
+
+    .tab {
+        padding: 8px 12px;
+    }
+
+    .tab span:not(.tabIcon) {
+        display: none;
+    }
+
+    .balance {
+        display: none;
+    }
+}
